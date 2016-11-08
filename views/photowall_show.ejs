@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>ImBigga</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+  <script src="custom_js/jquery-1.11.2.js"></script>
+  <script src="custom_js/bootstrap.min.js"></script>
+
+
+  <link href="css/lightbox.css" rel="stylesheet">
+  <script src="custom_js/lightbox.js"></script>
+
+  <link href="css/cssfile.css" rel="stylesheet">
+
+</head>
+
+<body>
+<p id="demo"></p>
+<h1>Wedding Party</h1>
+
+<div class="main-content">
+  <!-- <Start frame body -->
+  <div class="frame-body">
+    <div class="content-wrap">
+      <!--<?php-->
+
+      <!--for($i = 1;$i<33;++$i){-->
+
+      <!--$imgname = "images/pic".$i.".jpg";-->
+
+      <!--echo '<div class="frame">';-->
+      <!--echo '<a href="'.$imgname.'" data-lightbox="image-1">';-->
+      <!--echo '<img class="cropimg" draggable="true" src="'.$imgname.'" name="image" alt=""/></a></div>';-->
+
+      <!--}-->
+      <!--?>-->
+    </div>
+  </div>
+  <!-- End frame body --->
+
+  <!-- Start frame menu --->
+  <div class="frame-menu">
+    <div class="sidebar-nav-fixed pull-right affix  well_wrap">
+      <div class="well well-lg well-custom-style">
+        <a class="btn btn-block well-button" id="slideshowBt"
+           name="slideshowBt" style="width:200%; left:-10px" href="#" style="top:30px;">
+          <!-- slideshow.php -->
+          <img src="img/IB.png"  alt="Slide show"/>
+        </a>
+        <a class="btn btn-block well-button" name="printBt" id="droppable" style="bottom: 15%">
+          <img src="img/IB2.png" alt="Print" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <!---End frame menu--->
+
+</div>
+
+<script>
+
+  function handleDragStart(e) {
+
+    source = this;
+
+    console.log("<<<<", $(this).find("a").attr("href"));
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text', $(this).find("a").attr("href"));
+
+  }
+
+  function handleDragOver(e) {
+
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+    this.classList.add('over');
+
+    return false;
+  }
+
+  function handleDragLeave(e) {
+
+    this.classList.remove('over');
+
+  }
+
+  function handleDrop(e) {
+
+    if (e.preventDefault) {
+      e.preventDefault();
+
+    }
+    this.classList.remove('over');
+
+  }
+
+  function handleDropPrint(e){
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+
+    console.log("#####", e);
+
+    this.classList.remove('over');
+    document.getElementById("demo").innerHTML = "";
+
+    $data = e.dataTransfer.getData('text');
+//    $idx = $data.indexOf("src=");
+//    $end_idx = $data.indexOf(" name=");
+//    $data = $data.slice($idx,$end_idx);
+
+   // window.alert("Print "+ $data);
+
+    if ($data) {
+      $.get("photowall/print?path=" + $data, function (response) {
+        console.log(response);
+      });
+    }
+  }
+
+  var dropPrint = document.querySelectorAll('#droppable');
+  [].forEach.call(dropPrint, function(dropPrint){
+    dropPrint.addEventListener('drop',handleDropPrint, false);
+    dropPrint.addEventListener('dragover',handleDragOver, false);
+    dropPrint.addEventListener('dragstart',handleDragStart);
+  })
+
+  var fra = document.querySelectorAll('.frame');
+  [].forEach.call(fra, function(fra) {
+    fra.addEventListener('dragstart', handleDragStart, false);
+    fra.addEventListener('dragover', handleDragOver, false);
+    fra.addEventListener('dragleave', handleDragLeave, false);
+    fra.addEventListener('drop', handleDrop, false);
+  });
+
+
+</script>
+</body>
+</html>

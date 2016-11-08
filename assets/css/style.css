@@ -1,0 +1,134 @@
+
+body{
+    min-width: 400px;
+    min-height: 400px;
+    background: url(../pics/bg.jpg) no-repeat fixed center;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.main-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+}
+
+.main-content .frame-body{
+    position:fixed;
+    top:0;
+    bottom:0;
+    width:70%;
+    margin:1%;
+    border-radius:10px;
+    height:auto;
+}
+.main-content .frame-menu{
+    position:fixed;
+    top:0;
+    bottom:0;
+    right: 1%;
+    margin:1%;
+    width: 18%;
+    border-radius:10px;
+    height:auto;
+}
+
+
+.main-content .main-content-image {
+    display: block;
+    height: auto;
+    max-width: inherit;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.main-content a img {
+    border: none;
+}
+
+.main-content-container {
+    padding: 4px;
+}
+
+
+.wrap {
+    overflow: hidden;
+    position: relative;
+    max-height: 200px;
+    max-width: 200px;
+    min-width:50px;
+    min-height:50px;
+}
+
+.wrap img.original {
+    visibility: hidden;
+    max-height: 100%;
+    max-width:  100%;
+}
+
+.img_wrap {
+    position: absolute;
+    overflow:auto;
+    margin: auto auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.img_wrap img.normal {
+    max-width: 100%;
+    max-height:100%;
+}​
+
+.well_wrap{
+     position: fixed;
+     top: 2%;
+     right: 10%;
+     height: 90%;
+}
+
+.well_wrap  div.well-custom-style{
+    float: right;
+    position: fixed;
+    height: 97%;
+    background: transparent;
+    border: none;
+    width: 14%;
+}
+
+.well_wrap .well-button{
+    font-size: xx-large;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background: rgba(49, 176, 213, 0.2);
+    border-color: #f5f5f5;
+}
+
+.well-button:hover{
+    background-color: rgba(21, 149, 234, 0.38);
+}
+
+
+
+

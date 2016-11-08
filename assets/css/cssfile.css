@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+html {
+    box-sizing:border-box;
+}
+
+body{
+    min-width: 600px;
+    min-height: 600px;
+
+    background: url(../pics/bg.jpg) no-repeat fixed center;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    overflow-x: hidden;
+}
+img {
+    max-width:100%
+}
+h1 {
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    font-size:60px;
+    text-align:left;
+    margin: 20px 30px 40px;
+    color: rgb(50, 248, 230);
+}
+
+/*----------------------------------------*/
+.main-content {
+    position: absolute;
+    margin-top: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+}
+
+.main-content .frame-body{
+    position:relative;
+    top:0;
+    bottom:0;
+    float: left;
+    width:70%;
+    margin:1%;
+    border-radius:10px;
+    height:auto;
+}
+.main-content .frame-menu{
+    position:relative;
+    top:0;
+    bottom:0;
+    float: left;
+    width: 18%;
+    border-radius:10px;
+    height:auto;
+}
+
+.content-wrap {
+    width:100%;
+    margin:auto;
+    padding: 5px;
+}
+
+
+#grid {
+    margin:auto;
+    width:100%;
+}
+
+
+.over {
+    opacity:0.1;
+}
+.padded {
+    padding:15px;
+}
+
+
+
+.well_wrap{
+    position: fixed;
+    top: 5%;
+    left: 75%;
+    height: 100%;
+}
+
+.well_wrap  div.well-custom-style{
+    float: right;
+    position: fixed;
+    height: 90%;
+    background: transparent;
+    border: none;
+    width: 14%;
+}
+
+.well_wrap .well-button{
+    font-size: xx-large;
+    position: absolute;
+    width: 150%;
+    height: 25%;
+    text-align: center;
+    background: rgba(49, 176, 213, 0);
+    border-color: transparent;
+}
+
+.well-button:hover{
+    background-color: transparent;
+}
+
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+@-webkit-keyframes wobble  {
+    0%  { -webkit-transform:  rotate(0deg); }
+    20%  { -webkit-transform:  rotate(8deg); }
+    50%  { -webkit-transform:  rotate(-8deg); }
+    100%  { -webkit-transform:  rotate(0deg); }
+}
+.wobble { -webkit-animation: wobble 2s infinite; }
+
+
+.frame {
+    float:left;
+    width:33%;
+    max-width: 100%;
+    padding:5px;
+    cursor: move;
+    box-sizing:border-box;
+}
+
+.frame img.cropimg{
+    max-width: 100%;
+    display: inline-block;
+    max-height: 25%;
+}
+
+@media (min-width: 1000px){
+    .frame {
+        float:left;
+        width:25%;
+        max-width: 100%;
+        padding:5px;
+        cursor: move;
+        box-sizing:border-box;
+    }
+    .frame img.cropimg{
+        max-width: 100%;
+        display: inline-block;
+        max-height: 25%;
+    }
+}
